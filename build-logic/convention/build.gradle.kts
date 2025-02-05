@@ -24,5 +24,15 @@ dependencies {
 }
 
 gradlePlugin {
+    plugins {
+        register("conventionAndroidApplication") {
+            id = "convention.android.application"
+            implementationClass = "convention.plugin.AndroidApplicationConventionPlugin"
+        }
 
+        register("conventionAndroidLibrary") {
+            id = "convention.android.library"
+            implementationClass = "convention.plugin.AndroidLibraryConventionPlugin"
+        }
+    }
 }
