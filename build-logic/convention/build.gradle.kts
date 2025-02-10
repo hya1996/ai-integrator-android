@@ -21,6 +21,7 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.kotlin.gradle.plugin)
     compileOnly(libs.ksp.gradle.plugin)
+    compileOnly(libs.compose.gradle.plugin)
 }
 
 gradlePlugin {
@@ -33,6 +34,16 @@ gradlePlugin {
         register("conventionAndroidLibrary") {
             id = "convention.android.library"
             implementationClass = "convention.plugin.AndroidLibraryConventionPlugin"
+        }
+
+        register("conventionAndroidApplicationCompose") {
+            id = "convention.android.application.compose"
+            implementationClass = "convention.plugin.AndroidApplicationComposeConventionPlugin"
+        }
+
+        register("conventionAndroidLibraryCompose") {
+            id = "convention.android.library.compose"
+            implementationClass = "convention.plugin.AndroidLibraryComposeConventionPlugin"
         }
     }
 }
