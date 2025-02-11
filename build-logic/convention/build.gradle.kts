@@ -45,5 +45,15 @@ gradlePlugin {
             id = "convention.android.library.compose"
             implementationClass = "convention.plugin.AndroidLibraryComposeConventionPlugin"
         }
+
+        register("conventionAndroidFeature") {
+            id = "convention.android.feature"
+            implementationClass = "convention.plugin.AndroidFeatureConventionPlugin"
+        }
+
+        register("conventionAndroidData") {
+            id = "convention.android.data"
+            implementationClass = "convention.plugin.AndroidDataConventionPlugin"
+        }
     }
 }
