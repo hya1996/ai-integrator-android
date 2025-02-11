@@ -25,3 +25,5 @@ dependencyResolutionManagement {
 rootProject.name = "ai-integrator"
 
 include(":app")
+
+include(":core:ui")

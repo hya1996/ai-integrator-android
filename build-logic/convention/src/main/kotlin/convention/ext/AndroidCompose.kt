@@ -20,6 +20,7 @@ internal fun Project.configureAndroidCompose(
             "implementation"(libs.findLibrary("androidx-compose-ui-graphics").get())
             "implementation"(libs.findLibrary("androidx-compose-ui-tooling-preview").get())
             "implementation"(libs.findLibrary("androidx-compose-foundation").get())
+            "implementation"(libs.findLibrary("androidx-compose-foundation-layout").get())
             "implementation"(libs.findLibrary("androidx.lifecycle.runtime.compose").get())
             "implementation"(libs.findLibrary("androidx-lifecycle-viewmodel-compose").get())
             "debugImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
