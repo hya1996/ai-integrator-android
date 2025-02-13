@@ -1,6 +1,7 @@
 [versions]
 agp = "8.3.1"
 kotlin = "2.0.0"
+kotlinCoroutines = "1.10.1"
 coreKtx = "1.15.0"
 lifecycleRuntimeKtx = "2.8.7"
 composeBom = "2024.10.01"
@@ -12,13 +13,20 @@ coil = "3.1.0"
 retrofit = "2.11.0"
 
 [libraries]
+# Kotlin
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref="kotlin" }
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-android", version.ref="kotlinCoroutines"}
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-core", version.ref="kotlinCoroutines"}
+
+# Android
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 
-# Compose & Ext
+# Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
@@ -53,3 +61,29 @@ convention-android-application = { id = "convention.android.application", versio
 convention-android-library = { id = "convention.android.library", version = "unspecified" }
 convention-android-application-compose = { id = "convention.android.application.compose", version = "unspecified" }
 convention-android-library-compose = { id = "convention.android.library.compose", version = "unspecified" }
+
+[bundles]
+common-base = [
+    "kotlin-stdlib",
+    "kotlin-coroutines-core",
+]
+
+android-base = [
+    "androidx-core-ktx",
+    "androidx-lifecycle-runtime-ktx",
+
+    "kotlin-coroutines-android",
+]
+
+android-compose = [
+    "androidx-compose-ui",
+    "androidx-compose-material3",
+    "androidx-compose-material-icons-extended",
+    "androidx-compose-ui-graphics",
+    "androidx-compose-ui-tooling-preview",
+    "androidx-compose-foundation",
+    "androidx-compose-foundation-layout",
+
+    "androidx-lifecycle-runtime-compose",
+    "androidx-lifecycle-viewmodel-compose",
+]
