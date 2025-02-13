@@ -26,4 +26,5 @@ rootProject.name = "ai-integrator"
 
 include(":app")
 
+include(":core:framework")
 include(":core:ui")

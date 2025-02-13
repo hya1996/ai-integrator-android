@@ -8,6 +8,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.project
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -25,6 +26,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(libs.findBundle("common-base").get())
                 "implementation"(libs.findBundle("android-base").get())
+
+                "implementation"(project(Modules.Core.framework))
             }
         }
     }

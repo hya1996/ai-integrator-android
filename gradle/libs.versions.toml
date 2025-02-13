@@ -53,10 +53,12 @@ compose-gradle-plugin = { group = "org.jetbrains.kotlin", name = "compose-compil
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 # Plugins defined by this project
+convention-android-framework = { id = "convention.android.framework", version = "unspecified" }
 convention-android-application = { id = "convention.android.application", version = "unspecified" }
 convention-android-library = { id = "convention.android.library", version = "unspecified" }
 convention-android-application-compose = { id = "convention.android.application.compose", version = "unspecified" }

@@ -1,5 +1,6 @@
 object Modules {
     object Core {
+        val framework = core("framework")
         val ui = core("ui")
     }
 

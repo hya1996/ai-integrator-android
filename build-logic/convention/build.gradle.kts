@@ -26,6 +26,11 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        register("conventionAndroidFramework") {
+            id = "convention.android.framework"
+            implementationClass = "convention.plugin.AndroidFrameworkConventionPlugin"
+        }
+
         register("conventionAndroidApplication") {
             id = "convention.android.application"
             implementationClass = "convention.plugin.AndroidApplicationConventionPlugin"

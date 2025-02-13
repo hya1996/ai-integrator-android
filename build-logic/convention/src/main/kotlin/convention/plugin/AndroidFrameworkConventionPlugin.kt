@@ -1,17 +1,15 @@
 package convention.plugin
 
-import Modules
+import com.android.build.gradle.LibraryExtension
 import convention.Configs
 import convention.ext.configureKotlinAndroid
-import com.android.build.gradle.LibraryExtension
 import convention.ext.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.project
 
-class AndroidLibraryConventionPlugin : Plugin<Project> {
+class AndroidFrameworkConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
@@ -27,8 +25,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(libs.findBundle("common-base").get())
                 "implementation"(libs.findBundle("android-base").get())
-
-                "implementation"(project(Modules.Core.framework))
             }
         }
     }
