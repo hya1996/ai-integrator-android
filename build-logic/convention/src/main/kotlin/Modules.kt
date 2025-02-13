@@ -5,7 +5,7 @@ object Modules {
     }
 
     object Feature {
-
+        val dialogue = feature("dialogue")
     }
 
     object Data {
