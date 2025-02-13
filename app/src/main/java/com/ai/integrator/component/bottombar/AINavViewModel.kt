@@ -1,4 +1,4 @@
-package com.ai.integrator.navigation
+package com.ai.integrator.component.bottombar
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -12,6 +12,9 @@ import androidx.compose.material.icons.rounded.MusicNote
 import androidx.compose.material.icons.rounded.Videocam
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.ai.integrator.R
+import com.ai.integrator.core.framework.viewmodel.BaseViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 enum class TopLevelDestination(
     val selectedIcon: ImageVector,
@@ -38,4 +41,15 @@ enum class TopLevelDestination(
         unselectedIcon = Icons.Outlined.Videocam,
         iconTextId = R.string.app_nav_bottom_bar_item_video,
     ),
+}
+
+class AINavViewModel : BaseViewModel() {
+    val destinations = MutableStateFlow(TopLevelDestination.entries).asStateFlow()
+
+    private val _selectedDest = MutableStateFlow(TopLevelDestination.DIALOGUE)
+    val selectedDest = _selectedDest.asStateFlow()
+
+    fun selectDest(dest: TopLevelDestination) {
+        _selectedDest.value = dest
+    }
 }

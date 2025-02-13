@@ -9,9 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ai.integrator.component.AINavBottomBar
+import com.ai.integrator.component.bottombar.AINavBottomBar
 import com.ai.integrator.core.ui.theme.AITheme
-import com.ai.integrator.navigation.TopLevelDestination
 
 @Composable
 fun AIApp(
@@ -23,7 +22,7 @@ fun AIApp(
     ) {
         Scaffold(
             bottomBar = {
-                AINavBottomBar(destinations = TopLevelDestination.entries)
+                AINavBottomBar()
             },
         ) { padding ->
             Text(
