@@ -39,4 +39,6 @@ dependencies {
     implementation(libs.androidx.activity.compose)
 
     implementation(project(Modules.Core.ui))
+
+    implementation(project(Modules.Feature.dialogue))
 }

@@ -42,7 +42,7 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 
 # Image
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
-coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-compose-okhttp", version.ref = "coil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 
 # Dependencies of the included build-logic
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -63,6 +63,8 @@ convention-android-application = { id = "convention.android.application", versio
 convention-android-library = { id = "convention.android.library", version = "unspecified" }
 convention-android-application-compose = { id = "convention.android.application.compose", version = "unspecified" }
 convention-android-library-compose = { id = "convention.android.library.compose", version = "unspecified" }
+convention-android-feature = { id = "convention.android.feature", version = "unspecified" }
+convention-android-data = { id = "convention.android.data", version = "unspecified" }
 
 [bundles]
 common-base = [
