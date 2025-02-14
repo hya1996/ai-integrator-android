@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,7 +28,7 @@ fun DialogueHomeTopBar(
         modifier = modifier
             .fillMaxWidth()
             .height(60.dp)
-            .background(MaterialTheme.colorScheme.background),
+            .background(colorScheme.background),
     ) {
         Text(
             text = stringResource(R.string.feature_dialogue_home_title),
