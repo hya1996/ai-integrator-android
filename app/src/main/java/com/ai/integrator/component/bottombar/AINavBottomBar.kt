@@ -35,7 +35,7 @@ fun AINavBottomBar(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(0.5.dp)
-                .background(colorScheme.outlineVariant)
+                .background(colorScheme.outline)
         )
         NavigationBar(
             modifier = modifier,
@@ -84,7 +84,8 @@ fun RowScope.AINavBottomBarItem(
         },
         modifier = modifier,
         colors = NavigationBarItemDefaults.colors(
-            indicatorColor = Color.Transparent
+            selectedIconColor = Color.Black,
+            indicatorColor = Color.Transparent,
         )
     )
 }

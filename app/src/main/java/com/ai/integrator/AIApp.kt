@@ -1,6 +1,9 @@
 package com.ai.integrator
 
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -16,14 +19,17 @@ fun AIApp(
     modifier: Modifier = Modifier,
 ) {
     Surface(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize(),
         color = MaterialTheme.colorScheme.background,
     ) {
         Scaffold(
+            modifier = Modifier
+                .windowInsetsPadding(WindowInsets.safeDrawing),
             bottomBar = {
                 AINavBottomBar()
             },
-        ) { padding ->
+        ) { _ ->
             DialogueHomeScreen()
         }
     }

@@ -27,13 +27,14 @@ fun DialogueHomeTopBar(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
             .fillMaxWidth()
-            .height(60.dp)
+            .height(50.dp)
             .background(colorScheme.background),
     ) {
         Text(
             text = stringResource(R.string.feature_dialogue_home_title),
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
+            color = colorScheme.primary
         )
     }
 }
