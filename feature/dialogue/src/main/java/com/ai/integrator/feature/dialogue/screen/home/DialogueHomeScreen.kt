@@ -21,7 +21,7 @@ fun DialogueHomeScreen(
     Column(
         modifier = modifier
             .fillMaxHeight()
-            .background(colorScheme.primaryContainer)
+            .background(colorScheme.primaryContainer),
     ) {
         DialogueHomeTopBar()
         DialogueHomeModelList(
