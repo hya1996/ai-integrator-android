@@ -1,11 +1,9 @@
 package com.ai.integrator.component.bottombar
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.NavigationBar
@@ -31,15 +29,14 @@ fun AINavBottomBar(
     val selectedDest by viewModel.selectedDest.collectAsStateWithLifecycle()
 
     Column {
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(0.5.dp)
-                .background(colorScheme.outline)
+        HorizontalDivider(
+            thickness = 0.5.dp,
+            color = colorScheme.outline,
+            modifier = Modifier.fillMaxWidth(),
         )
         NavigationBar(
             modifier = modifier,
-            containerColor = colorScheme.background,
+            containerColor = colorScheme.primaryContainer,
             content = {
                 destinations.forEach { dest ->
                     val iconText = stringResource(dest.iconTextId)

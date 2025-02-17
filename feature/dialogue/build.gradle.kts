@@ -4,4 +4,8 @@ plugins {
 
 android {
     namespace = "com.ai.integrator.feature.dialogue"
+
+    dependencies {
+        implementation(project(Modules.Data.dialogue))
+    }
 }

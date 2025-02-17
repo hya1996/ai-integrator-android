@@ -28,11 +28,11 @@ fun DialogueHomeTopBar(
         modifier = modifier
             .fillMaxWidth()
             .height(50.dp)
-            .background(colorScheme.background),
+            .background(colorScheme.primaryContainer),
     ) {
         Text(
             text = stringResource(R.string.feature_dialogue_home_title),
-            fontSize = 16.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = colorScheme.primary
         )
