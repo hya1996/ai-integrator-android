@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.integrator.core.dialogue"
+    namespace = "com.ai.integrator.feature.dialogue"
 }

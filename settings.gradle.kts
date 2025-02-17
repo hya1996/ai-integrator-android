@@ -30,3 +30,5 @@ include(":core:framework")
 include(":core:ui")
 
 include(":feature:dialogue")
+
+include(":data:dialogue")

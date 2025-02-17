@@ -9,7 +9,7 @@ object Modules {
     }
 
     object Data {
-
+        val dialogue = data("dialogue")
     }
 
     private fun core(name: String) = ":core:$name"
