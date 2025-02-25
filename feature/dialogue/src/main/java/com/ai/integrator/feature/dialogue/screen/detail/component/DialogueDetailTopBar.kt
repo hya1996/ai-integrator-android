@@ -1,9 +1,18 @@
 package com.ai.integrator.feature.dialogue.screen.detail.component
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowBackIosNew
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,30 +28,56 @@ import com.ai.integrator.core.ui.theme.AITheme
 @Composable
 fun DialogueDetailTopBar(
     title: String,
-    subtitle: String = "",
     modifier: Modifier = Modifier,
+    subtitle: String = "",
+    onBackClick: () -> Unit = {},
 ) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+    Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(44.dp),
+            .height(55.dp),
     ) {
-        Text(
-            text = title,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
-            color = colorScheme.primary,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
+        Image(
+            imageVector = Icons.Rounded.ArrowBackIosNew,
+            contentDescription = null,
+            modifier = Modifier
+                .width(36.dp)
+                .fillMaxHeight()
+                .align(Alignment.CenterStart)
+                .clickable(
+                    onClick = onBackClick,
+                    indication = null,
+                    interactionSource = null,
+                )
+                .padding(start = 12.dp)
         )
-        Text(
-            text = subtitle,
-            fontSize = 13.sp,
-            color = colorScheme.secondary,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = modifier.align(Alignment.Center),
+        ) {
+            Text(
+                text = title,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = colorScheme.primary,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            Text(
+                text = subtitle,
+                fontSize = 13.sp,
+                color = colorScheme.secondary,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+        HorizontalDivider(
+            thickness = 0.5.dp,
+            color = colorScheme.outline,
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.BottomCenter)
         )
     }
 }

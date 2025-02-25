@@ -12,6 +12,7 @@ import com.ai.integrator.feature.dialogue.screen.detail.component.DialogueDetail
 @Composable
 fun DialogueDetailScreen(
     modelInfo: DialogueModelInfo,
+    onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -22,6 +23,7 @@ fun DialogueDetailScreen(
         DialogueDetailTopBar(
             title = modelInfo.name,
             subtitle = modelInfo.intro,
+            onBackClick = onBackClick,
         )
     }
 }

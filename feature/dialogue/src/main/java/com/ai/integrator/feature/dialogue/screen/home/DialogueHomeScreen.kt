@@ -8,11 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.ai.integrator.data.dialogue.model.DialogueModelInfo
 import com.ai.integrator.feature.dialogue.screen.home.component.modellist.DialogueHomeModelList
 import com.ai.integrator.feature.dialogue.screen.home.component.topbar.DialogueHomeTopBar
 
 @Composable
 fun DialogueHomeScreen(
+    onModelItemClick: (DialogueModelInfo) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DialogueHomeViewModel = DialogueHomeViewModel(),
 ) {
@@ -25,7 +27,8 @@ fun DialogueHomeScreen(
     ) {
         DialogueHomeTopBar()
         DialogueHomeModelList(
-            modelList = modelList
+            modelList = modelList,
+            onModelItemClick = onModelItemClick,
         )
     }
 }

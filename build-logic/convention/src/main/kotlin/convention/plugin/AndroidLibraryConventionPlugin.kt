@@ -1,9 +1,9 @@
 package convention.plugin
 
 import Modules
+import com.android.build.gradle.LibraryExtension
 import convention.Configs
 import convention.ext.configureKotlinAndroid
-import com.android.build.gradle.LibraryExtension
 import convention.ext.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,6 +17,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
+                apply("org.jetbrains.kotlin.plugin.serialization")
+                apply("kotlin-parcelize")
             }
 
             extensions.configure<LibraryExtension> {

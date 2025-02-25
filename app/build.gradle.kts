@@ -41,4 +41,6 @@ dependencies {
     implementation(project(Modules.Core.ui))
 
     implementation(project(Modules.Feature.dialogue))
+
+    implementation(project(Modules.Data.dialogue))
 }

@@ -12,6 +12,7 @@ import com.ai.integrator.data.dialogue.model.DialogueModelInfo
 @Composable
 fun DialogueHomeModelList(
     modelList: List<DialogueHomeModelItemData>,
+    onModelItemClick: (DialogueModelInfo) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -19,7 +20,10 @@ fun DialogueHomeModelList(
             .fillMaxWidth()
     ) {
         items(modelList) {
-            DialogueHomeModeItem(itemData = it)
+            DialogueHomeModeItem(
+                itemData = it,
+                onClick = onModelItemClick,
+            )
         }
     }
 }
@@ -38,6 +42,9 @@ fun DialogueHomeModelListPreview() {
     )
 
     AITheme {
-        DialogueHomeModelList(modelList = listData)
+        DialogueHomeModelList(
+            modelList = listData,
+            onModelItemClick = {},
+        )
     }
 }

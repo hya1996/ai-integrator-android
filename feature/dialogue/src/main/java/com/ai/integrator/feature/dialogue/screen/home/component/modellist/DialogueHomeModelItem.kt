@@ -1,6 +1,7 @@
 package com.ai.integrator.feature.dialogue.screen.home.component.modellist
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,6 +31,7 @@ data class DialogueHomeModelItemData(
 @Composable
 fun DialogueHomeModeItem(
     itemData: DialogueHomeModelItemData,
+    onClick: (DialogueModelInfo) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val modelInfo = itemData.modelInfo
@@ -38,6 +40,7 @@ fun DialogueHomeModeItem(
             .height(76.dp)
             .fillMaxWidth()
             .background(colorScheme.primaryContainer)
+            .clickable { onClick(modelInfo) }
             .padding(start = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
