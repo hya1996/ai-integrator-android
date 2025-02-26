@@ -18,12 +18,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ai.integrator.core.ui.theme.AITheme
 
 @Composable
 fun AINavBottomBar(
     modifier: Modifier = Modifier,
-    viewModel: AINavViewModel = AINavViewModel(),
+    viewModel: AINavViewModel = viewModel(),
 ) {
     val destinations by viewModel.destinations.collectAsStateWithLifecycle()
     val selectedDest by viewModel.selectedDest.collectAsStateWithLifecycle()

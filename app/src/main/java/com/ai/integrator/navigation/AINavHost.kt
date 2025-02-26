@@ -1,5 +1,7 @@
 package com.ai.integrator.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -17,6 +19,8 @@ fun AINavHost(
         navController = navController,
         startDestination = DialogueRoute,
         modifier = modifier,
+        enterTransition = { EnterTransition.None },
+        exitTransition = { ExitTransition.None },
     ) {
         dialogueNavGraph(
             onModelItemClick = { modelInfo ->
