@@ -14,6 +14,7 @@ class AndroidDataConventionPlugin : Plugin<Project> {
 
             dependencies {
                 "implementation"(libs.findLibrary("retrofit").get())
+                "implementation"(libs.findLibrary("retrofit-converter-gson").get())
             }
         }
     }
