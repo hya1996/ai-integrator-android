@@ -52,7 +52,7 @@ fun DialogueDetailScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 DialogueDetailTopBar(
-                    title = modelInfo.name,
+                    title = modelInfo.simpleName,
                     subtitle = modelInfo.intro,
                     onBackClick = onBackClick,
                 )

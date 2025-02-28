@@ -4,7 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class DialogueModelInfo(
-    val name: String,
+    val simpleName: String,
+    val modelName: String,
     val iconUrl: String,
     val intro: String = "",
 )

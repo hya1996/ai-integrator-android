@@ -64,7 +64,7 @@ fun DialogueHomeModeItem(
                 modifier = Modifier.height(75.dp)
             ) {
                 Text(
-                    text = modelInfo.name,
+                    text = modelInfo.simpleName,
                     color = colorScheme.primary,
                     fontSize = 16.sp,
                     maxLines = 1,
